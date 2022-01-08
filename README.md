@@ -8,7 +8,4 @@ Once the target user is affected by the script it sends us an email of its key l
 
 <br>
 <br>
-![3](https://user-images.githubusercontent.com/90370604/148632393-ec22b612-d75e-4c7a-be4d-131bc31b3c31.jpg)
-
-
 ![148632393-ec22b612-d75e-4c7a-be4d-131bc31b3c31](https://user-images.githubusercontent.com/90370604/148632417-d2a21e9e-d5f2-426f-b534-a7dff4e6aceb.jpg)
