@@ -24,8 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($selectstmt->rowCount() > 0) {
         //array
         $userArray = $selectstmt->fetchAll(PDO::FETCH_ASSOC);
-        $sql = 'INSERT INTO `logger`.`logs` (`userid`, `log`,`starttime`,`endtime`) VALUES (:userid, :logs, :startt
-ime, :endtime)';
+        $sql = 'INSERT INTO `logger`.`logs` (`userid`, `log`,`starttime`,`endtime`) VALUES (:userid, :logs, :starttime, :endtime)';
         $statement = $conn->prepare($sql);
         //Bind params
         $statement->bindParam(':userid', $userArray[0]["ai"], PDO::PARAM_INT);
