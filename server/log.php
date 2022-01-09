@@ -1,13 +1,14 @@
 <?php
 require_once 'Auth.php';
+require_once 'config.php';
 $auth = new Auth;
 $auth->private();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
-    $servername = "[SERVER_NAME]";
-    $username = "[DATABASE_USERNAME]";
-    $password = "[DATABASE_PASSWORD]";
-    $dbname = "[DATABASE_NAME]";
+    $servername = SERVER_NAME;
+    $username = DB_USER;
+    $password = DB_PASS;
+    $dbname = DB_NAME;
     // Create connection
     try {
         $conn = new PDO('mysql:host=' . $servername . ';dbname=' . $dbname, $username, $password);
