@@ -27,7 +27,7 @@ class Auth
             echo json_encode(array('warning' => 'Sorry, you need proper credentials.'));
             exit;
         } else {
-            if ($_SERVER['PHP_AUTH_USER'] == '[BASIC_AUTH_USERNAME_GOES_HERE]' && $_SERVER['PHP_AUTH_PW'] == '[BASIC_AUTH_PASSWORD_GOES_HERE]') {
+            if ($_SERVER['PHP_AUTH_USER'] == BASIC_AUTH_USER && $_SERVER['PHP_AUTH_PW'] == BASIC_AUTH_PASS) {
             } else {
                 header("WWW-Authenticate: Basic realm=\"Private Area\"");
                 header("HTTP/1.0 401 Unauthorized");

