@@ -1,6 +1,33 @@
 # Keylogger-Backdoor
 This is an educational project that sends target machine's key press log to a cloud server by creating a backdoor. 
 
+# Contribute
+1. Make sure your branch is `dev` and sync with the remote branch.
+2. Create a new branch from the `dev` branch before start working on a new issue
+3. Publish your branch
+4. When all the commits are ready for publishing, Create a Pull Request to the `dev` branch
+5. Make sure you are pulling 'from' your branch and pulling 'into' `dev` or immediate upstream branch
+6. Make sure to use the PULL request template with title and the description with your changes. (detailed)
+7. Review changes and Merge
+
+## Commit Message Types
+### Commit message template
+`<type>[optional scope]:<description>` <br>
+#### Example <br>
+`style: update navbar hamburger drop down styles`
+  <br>
+1. feat - Features - A new feature
+2. fix - Bug Fixes - A bug Fix
+3. docs - Documentation - Documentation only changes
+4. style - Styles - Changes that do not affect the meaning of the code
+5. refactor - Code Refactoring - A code change that neither fixes a bug nor adds a feature
+6. perf - Performance, Improvements - A code change that improves performance
+7. test - Tests - Addming missing tests or correcting existing tests
+8. build - Builds - Changes that affect the build system or external dependencies 
+9. ci - Continuous Intergrations - Changes to our CI configuration files ans scripts 
+10. chore - Chores Other changes that don't modify src or test files
+11. revert - Reverts Reverts a previous commit
+
 ## Current version (3) of Keylogger & Backdoor
 In the current version, <br>
 Once the target user is affected by the script it sends us an email of its key log at a time interval which can edit from inside the script file.
